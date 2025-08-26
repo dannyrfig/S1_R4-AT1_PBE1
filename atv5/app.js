@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const PORT = 8081;
 
-let saudacao; 
 
 app.get("/saudacao/:nome", (req, res) => {
   try {
@@ -12,6 +11,7 @@ app.get("/saudacao/:nome", (req, res) => {
     if (isNaN(horaDia) || horaDia < 0 || horaDia > 23) {
       return res.status(400).send("A hora foi identificada, digite um número entre o e 23"); 
     } 
+    let saudacao; 
 
     if (horaDia >= 0 && horaDia < 12) {
       saudacao = `Bom dia ! ${nome}`; 
